@@ -1,4 +1,5 @@
 *.pyc
+enron_mail_20150507.tar.gz
 enron_mail_20110402.tgz
 enron_mail_20110402/
 enron_mail_20150507.tgz
@@ -9,4 +10,4 @@ my_classifier.pkl
 my_dataset.pkl
 my_feature_list.pkl
 .DS_Store
-__pycache__
+i__pycache__

@@ -43,3 +43,8 @@ t0 = time()
 labels_predict = clf.predict(features_test)
 print("Predicting Time:", round(time()-t0, 3), "s")
 ##############################################################
+
+### calculating Accuracy classification score
+from sklearn.metrics import accuracy_score
+acc_score = accuracy_score(labels_test, labels_predict)
+print("Accuracy Score:", round(acc_score, 3))

@@ -21,9 +21,12 @@ features_train, features_test, labels_train, labels_test = preprocess()
 
 
 #########################################################
-### your code goes here ###
+### creating SVM classifier
+from sklearn.svm import SVC
+clf = SVC(kernel="linear")
 
-
+clf.fit(features_train, labels_train);
+pred = clf.predict(features_test);
 #########################################################
 
 #########################################################
@@ -32,6 +35,8 @@ You'll be Provided similar code in the Quiz
 But the Code provided in Quiz has an Indexing issue
 The Code Below solves that issue, So use this one
 '''
+
+
 
 # features_train = features_train[:int(len(features_train)/100)]
 # labels_train = labels_train[:int(len(labels_train)/100)]

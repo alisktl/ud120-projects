@@ -27,6 +27,10 @@ clf = SVC(kernel="linear")
 
 clf.fit(features_train, labels_train);
 pred = clf.predict(features_test);
+
+from sklearn.metrics import accuracy_score
+acc_score = accuracy_score(pred, labels_test)
+print("Accuracy Score:", round(acc_score, 3))
 #########################################################
 
 #########################################################

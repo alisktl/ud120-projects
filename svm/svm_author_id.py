@@ -10,9 +10,10 @@
     
 import sys
 from time import time
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
 sys.path.append("../tools/")
 from email_preprocess import preprocess
-
 
 ### features_train and features_test are the features for the training
 ### and testing datasets, respectively
@@ -20,7 +21,6 @@ from email_preprocess import preprocess
 features_train, features_test, labels_train, labels_test = preprocess()
 
 ### creating SVM classifier
-from sklearn.svm import SVC
 clf = SVC(kernel="linear")
 
 ### slicing the training dataset down to 1% of its original size
@@ -35,6 +35,5 @@ t0 = time()
 pred = clf.predict(features_test)
 print("Predicting Time:", round(time()-t0, 3), "s")
 
-from sklearn.metrics import accuracy_score
 acc_score = accuracy_score(pred, labels_test)
 print("Accuracy Score:", round(acc_score, 3))

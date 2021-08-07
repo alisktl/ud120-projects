@@ -21,7 +21,7 @@ from email_preprocess import preprocess
 features_train, features_test, labels_train, labels_test = preprocess()
 
 ### creating SVM classifier
-clf = SVC(kernel="linear")
+clf = SVC(kernel="rbf", C=10000)
 
 ### slicing the training dataset down to 1% of its original size
 features_train = features_train[:int(len(features_train)/100)]

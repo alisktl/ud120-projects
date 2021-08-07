@@ -9,6 +9,8 @@
 """
     
 import sys
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
 from time import time
 sys.path.append("../tools/")
 from email_preprocess import preprocess
@@ -19,13 +21,11 @@ from email_preprocess import preprocess
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
+### Initiating DecisionTreeClassifier
+clf = DecisionTreeClassifier(min_samples_split=40)
 
+### Fitting the classifier
+clf.fit(features_train, labels_train)
 
-
-#########################################################
-### your code goes here ###
-
-
-#########################################################
-
-
+### Predicting
+pred = clf.predict(features_test)

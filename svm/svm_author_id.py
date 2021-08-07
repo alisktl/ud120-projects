@@ -9,6 +9,7 @@
 """
     
 import sys
+from collections import Counter
 from time import time
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
@@ -35,10 +36,14 @@ t0 = time()
 pred = clf.predict(features_test)
 print("Predicting Time:", round(time()-t0, 3), "s")
 
-acc_score = accuracy_score(pred, labels_test)
+acc_score = accuracy_score(labels_test, pred)
 print("Accuracy Score:", acc_score)
 
 print("Predictions:")
 print("10:", pred[10])
 print("26:", pred[26])
 print("50:", pred[50])
+
+c = Counter(pred)
+print("Number of predictions for Chris:", c[1])
+print("Number of predictions for Sara:", c[0])

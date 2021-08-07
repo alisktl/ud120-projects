@@ -19,8 +19,6 @@ from email_preprocess import preprocess
 ### labels_train and labels_test are the corresponding item labels
 features_train, features_test, labels_train, labels_test = preprocess()
 
-
-#########################################################
 ### creating SVM classifier
 from sklearn.svm import SVC
 clf = SVC(kernel="linear")
@@ -40,18 +38,3 @@ print("Predicting Time:", round(time()-t0, 3), "s")
 from sklearn.metrics import accuracy_score
 acc_score = accuracy_score(pred, labels_test)
 print("Accuracy Score:", round(acc_score, 3))
-#########################################################
-
-#########################################################
-'''
-You'll be Provided similar code in the Quiz
-But the Code provided in Quiz has an Indexing issue
-The Code Below solves that issue, So use this one
-'''
-
-
-
-# features_train = features_train[:int(len(features_train)/100)]
-# labels_train = labels_train[:int(len(labels_train)/100)]
-
-#########################################################

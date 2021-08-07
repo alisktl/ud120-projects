@@ -37,3 +37,8 @@ print("Predicting Time:", round(time()-t0, 3), "s")
 
 acc_score = accuracy_score(pred, labels_test)
 print("Accuracy Score:", acc_score)
+
+print("Predictions:")
+print("10:", pred[10])
+print("26:", pred[26])
+print("50:", pred[50])

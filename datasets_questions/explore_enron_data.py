@@ -19,3 +19,5 @@ import joblib
 
 enron_data = joblib.load(open("../final_project/final_project_dataset.pkl", "rb"))
 
+### Number of data points (people) in the dataset
+print("Number of data points:", len(enron_data))

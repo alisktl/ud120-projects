@@ -2,6 +2,7 @@
 
 import matplotlib.pyplot as plt
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
@@ -30,7 +31,10 @@ plt.show()
 ################################################################################
 
 ### Initializing AdaBoostClassifier
-clf = AdaBoostClassifier(n_estimators=50, learning_rate=1.0, random_state=0)
+#clf = AdaBoostClassifier(n_estimators=50, learning_rate=1.0, random_state=0)
+
+### Initializing RandomForestClassifier
+clf = RandomForestClassifier(max_depth=4, random_state=0)
 
 ### Fitting classifier
 clf.fit(features_train, labels_train)

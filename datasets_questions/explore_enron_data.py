@@ -16,6 +16,7 @@
 """
 
 import joblib
+import re
 
 enron_data = joblib.load(open("../final_project/final_project_dataset.pkl", "rb"))
 
@@ -30,3 +31,13 @@ poi_count = 0
 for key in enron_data:
     poi_count += (enron_data[key]["poi"] == 1)
 print("Number of POI:", poi_count)
+
+### Number of all POI
+poi_all = 0
+with open("../final_project/poi_names.txt") as file:
+    content = file.readlines()
+for line in content:  
+    if re.match(r'\((y|n)\)', line):
+        poi_all += 1
+        
+print("Number of all POI:", poi_all)

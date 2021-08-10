@@ -3,6 +3,7 @@
 import matplotlib.pyplot as plt
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score
 from prep_terrain_data import makeTerrainData
 from class_vis import prettyPicture
@@ -34,7 +35,10 @@ plt.show()
 #clf = AdaBoostClassifier(n_estimators=50, learning_rate=1.0, random_state=0)
 
 ### Initializing RandomForestClassifier
-clf = RandomForestClassifier(max_depth=4, random_state=0)
+#clf = RandomForestClassifier(max_depth=4, random_state=0)
+
+### Initializing KNeighborsClassifier
+clf = KNeighborsClassifier(n_neighbors=4, p=5)
 
 ### Fitting classifier
 clf.fit(features_train, labels_train)

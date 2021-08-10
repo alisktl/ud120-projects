@@ -24,3 +24,9 @@ print("Number of data points:", len(enron_data))
 
 ### Number of features of each data point
 print("Number of features for each person:", len(enron_data[list(enron_data.keys())[0]]))
+
+### Count the number of people with 'poi' == 1
+poi_count = 0
+for key in enron_data:
+    poi_count += (enron_data[key]["poi"] == 1)
+print("Number of POI:", poi_count)

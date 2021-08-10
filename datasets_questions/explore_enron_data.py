@@ -21,3 +21,6 @@ enron_data = joblib.load(open("../final_project/final_project_dataset.pkl", "rb"
 
 ### Number of data points (people) in the dataset
 print("Number of data points:", len(enron_data))
+
+### Number of features of each data point
+print("Number of features for each person:", len(enron_data[list(enron_data.keys())[0]]))

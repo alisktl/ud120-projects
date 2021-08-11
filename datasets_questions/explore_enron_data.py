@@ -56,6 +56,10 @@ persons_execs = [person for person in enron_data if ("LAY" in person) or ("SKILL
 person_max_payment = max([(enron_data[person]["total_payments"], person) for person in persons_execs])
 print(person_max_payment[1], "took home $", person_max_payment[0])
 
-### How many folks in this dataset have a quantified salary? What about a known email address?
+### How many folks in this dataset have a quantified salary?
 quant_sal_count = len([person for person in enron_data if enron_data[person]["salary"] != 'NaN'])
 print("Number of quantified salaries:", quant_sal_count)
+
+### How many folks in this dataset have a known email address?
+known_email_count = len([person for person in enron_data if enron_data[person]["email_address"] != 'NaN'])
+print("Number of known email address:", known_email_count)

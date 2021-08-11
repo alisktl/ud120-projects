@@ -63,3 +63,8 @@ print("Number of quantified salaries:", quant_sal_count)
 ### How many folks in this dataset have a known email address?
 known_email_count = len([person for person in enron_data if enron_data[person]["email_address"] != 'NaN'])
 print("Number of known email address:", known_email_count)
+
+### How many people in the E+F dataset (as it currently exists) have “NaN” for their total payments? What percentage of people in the dataset as a whole is this?
+nan_total_payments_count = len([person for person in enron_data if enron_data[person]["total_payments"] == 'NaN'])
+print("Number of people who has 'NaN' for his total payments:", nan_total_payments_count)
+print("Percent of people who has 'NaN' for his total payments:", round(100*nan_total_payments_count/len(enron_data), 2))

@@ -50,3 +50,8 @@ print("Wesley Colwell's number of email messages to persons of interest:", enron
 
 ### Total value of stock options exercised by Jeffrey Skilling
 print("Total value of stock options exercised by Jeffrey Skilling:", enron_data["SKILLING JEFFREY K"]["exercised_stock_options"])
+
+### Of these three individuals (Lay, Skilling and Fastow), who took home the most money?
+persons_execs = [person for person in enron_data if ("LAY" in person) or ("SKILLING" in person) or ("FASTOW" in person)]
+person_max_payment = max([(enron_data[person]["total_payments"], person) for person in persons_execs])
+print(person_max_payment[1], "took home $", person_max_payment[0])

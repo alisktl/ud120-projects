@@ -68,3 +68,8 @@ print("Number of known email address:", known_email_count)
 nan_total_payments_count = len([person for person in enron_data if enron_data[person]["total_payments"] == 'NaN'])
 print("Number of people who has 'NaN' for his total payments:", nan_total_payments_count)
 print("Percent of people who has 'NaN' for his total payments:", round(100*nan_total_payments_count/len(enron_data), 2))
+
+### How many POIs in the E+F dataset have “NaN” for their total payments? What percentage of POI’s as a whole is this?
+poi_nan_total_payments_count = len([person for person in enron_data if enron_data[person]["poi"] == 1 and enron_data[person]["total_payments"] == 'NaN'])
+print("Number of poi people who has 'NaN' for his total payments:", poi_nan_total_payments_count)
+print("Percent of poi people who has 'NaN' for his total payments:", round(100*poi_nan_total_payments_count/poi_count, 2))

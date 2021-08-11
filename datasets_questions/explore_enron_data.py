@@ -55,3 +55,7 @@ print("Total value of stock options exercised by Jeffrey Skilling:", enron_data[
 persons_execs = [person for person in enron_data if ("LAY" in person) or ("SKILLING" in person) or ("FASTOW" in person)]
 person_max_payment = max([(enron_data[person]["total_payments"], person) for person in persons_execs])
 print(person_max_payment[1], "took home $", person_max_payment[0])
+
+### How many folks in this dataset have a quantified salary? What about a known email address?
+quant_sal_count = len([person for person in enron_data if enron_data[person]["salary"] != 'NaN'])
+print("Number of quantified salaries:", quant_sal_count)

@@ -38,8 +38,8 @@ from sklearn.linear_model import LinearRegression
 ### Training model
 reg = LinearRegression().fit(feature_train, target_train)
 
-### Print scope and intercept
-print("Scope:", reg.coef_)
+### Print slope and intercept
+print("Slope:", reg.coef_)
 print("Intercept:", reg.intercept_)
 
 ### Print r-squared score on the train data

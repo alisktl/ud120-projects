@@ -32,15 +32,15 @@ feature_train, feature_test, target_train, target_test = train_test_split(featur
 train_color = "b"
 test_color = "r"
 
+### import LinearRegression
+from sklearn.linear_model import LinearRegression
 
+### Training model
+reg = LinearRegression().fit(feature_train, target_train)
 
-### Your regression goes here!
-### Please name it reg, so that the plotting code below picks it up and 
-### plots it correctly. Don't forget to change the test_color above from "b" to
-### "r" to differentiate training points from test points.
-
-
-
+### Print scope and intercept
+print("Scope:", reg.coef_)
+print("Intercept:", reg.intercept_)
 
 
 

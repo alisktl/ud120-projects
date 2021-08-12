@@ -36,7 +36,8 @@ reg = LinearRegression().fit(ages_train, net_worths_train)
 ### Print slope
 print("Slope:", reg.coef_)
 
-
+### Print r-squared score on the test data
+print("r-squared score on test data:", reg.score(ages_test, net_worths_test))
 
 
 

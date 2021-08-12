@@ -42,6 +42,8 @@ reg = LinearRegression().fit(feature_train, target_train)
 print("Scope:", reg.coef_)
 print("Intercept:", reg.intercept_)
 
+### Print r-squared score on the train data
+print("r-squared score on train data:", reg.score(feature_train, target_train))
 
 
 

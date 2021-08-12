@@ -27,7 +27,14 @@ ages_train, ages_test, net_worths_train, net_worths_test = train_test_split(ages
 ### the plotting code below works, and you can see what your regression looks like
 
 
+### import LinearRegression
+from sklearn.linear_model import LinearRegression
 
+### Training model
+reg = LinearRegression().fit(ages_train, net_worths_train)
+
+### Print slope
+print("Slope:", reg.coef_)
 
 
 

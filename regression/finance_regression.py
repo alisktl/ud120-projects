@@ -45,6 +45,9 @@ print("Intercept:", reg.intercept_)
 ### Print r-squared score on the train data
 print("r-squared score on train data:", reg.score(feature_train, target_train))
 
+### Print r-squared score on the test data
+print("r-squared score on test data:", reg.score(feature_test, target_test))
+
 
 
 

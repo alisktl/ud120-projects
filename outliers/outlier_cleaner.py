@@ -12,9 +12,16 @@ def outlierCleaner(predictions, ages, net_worths):
     """
     
     cleaned_data = []
+    temp_data = []
 
-    ### your code goes here
+    pred_count = len(predictions)
 
-    
+    for i in range(pred_count):
+        temp_error = abs(predictions[i] - net_worths[i])
+        temp_tuple = (ages[i], net_worths[i], temp_error)
+        temp_data.append(temp_tuple)
+
+    temp_data.sort(key = lambda data: data[2])
+    cleaned_data = temp_data[0:int(len(temp_data)*0.9)]
+
     return cleaned_data
-

@@ -76,6 +76,12 @@ if len(cleaned_data) > 0:
     try:
         reg.fit(ages, net_worths)
         plt.plot(ages, reg.predict(ages), color="blue")
+
+        ### Print new slope
+        print("New slope:", reg.coef_)
+
+        ### Print new r-squared score on the test data
+        print("New r-squared score on test data:", reg.score(ages_test, net_worths_test))
     except NameError:
         print("You don't seem to have regression imported/created,")
         print("   or else your regression object isn't named reg")

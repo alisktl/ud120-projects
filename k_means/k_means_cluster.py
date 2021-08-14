@@ -79,3 +79,8 @@ except NameError:
 non_nan_exercised_stock_options = [data_dict[person]["exercised_stock_options"] for person in data_dict if(data_dict[person]["exercised_stock_options"] != 'NaN')]
 print("MIN exercised_stock_options", min(non_nan_exercised_stock_options))
 print("MAX exercised_stock_options", max(non_nan_exercised_stock_options))
+
+### Print min and max values of salary
+non_nan_salary = [data_dict[person]["salary"] for person in data_dict if(data_dict[person]["salary"] != 'NaN')]
+print("MIN salary", min(non_nan_salary))
+print("MAX salary", max(non_nan_salary))

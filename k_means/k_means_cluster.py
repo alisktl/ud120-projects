@@ -74,3 +74,8 @@ try:
     Draw(pred, finance_features, poi, mark_poi=False, name="clusters.pdf", f1_name=feature_1, f2_name=feature_2)
 except NameError:
     print("No predictions object named pred found, no clusters to plot")
+
+### Print min and max values of exercised_stock_options
+non_nan_exercised_stock_options = [data_dict[person]["exercised_stock_options"] for person in data_dict if(data_dict[person]["exercised_stock_options"] != 'NaN')]
+print("MIN exercised_stock_options", min(non_nan_exercised_stock_options))
+print("MAX exercised_stock_options", max(non_nan_exercised_stock_options))

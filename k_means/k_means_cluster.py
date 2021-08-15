@@ -64,7 +64,7 @@ plt.show()
 ### cluster here; create predictions of the cluster labels
 ### for the data and store them to a list called pred
 from sklearn.cluster import KMeans
-pred = KMeans(n_clusters=2).fit(data).predict(data)
+pred = KMeans(n_clusters=2).fit(finance_features).predict(finance_features)
 
 
 

@@ -67,6 +67,12 @@ scaler = MinMaxScaler()
 scaler.fit(finance_features)
 finance_features = scaler.transform(finance_features)
 
+### rescaled_vals - rescaled value of a "salary" feature that had an original
+### value of $200,000, and an "exercised_stock_options" feature of $1 million
+rescaled_vals = scaler.transform([[200000, 1000000]])
+print("Scaled $200,000 salary:", rescaled_vals[0][0])
+print("Scaled $1,000,000 exercised_stock_options:", rescaled_vals[0][1])
+
 ### cluster here; create predictions of the cluster labels
 ### for the data and store them to a list called pred
 from sklearn.cluster import KMeans

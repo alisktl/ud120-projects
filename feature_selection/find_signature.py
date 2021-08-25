@@ -45,8 +45,14 @@ clf = DecisionTreeClassifier()
 clf.fit(features_train, labels_train)
 print("Accuracy:", clf.score(features_test, labels_test))
 
+important_word_indices = []
+
 print("\nImportant features:")
 importances = clf.feature_importances_
 for index in range(len(importances)):
     if importances[index] > 0.2:
         print("index:", index, ", importance:", importances[index])
+        important_word_indices.append(index)
+
+for index in important_word_indices:
+    print("\nMost important word:", vectorizer.get_feature_names()[index])
